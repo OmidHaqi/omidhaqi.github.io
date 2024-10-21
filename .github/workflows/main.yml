@@ -1,0 +1,57 @@
+name: "Build & Deploy Web"
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-web:
+    name: Build Web and Push to Main Branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.3'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Enable Web 
+        run: flutter config --enable-web 
+
+      - name: Build Web
+        run: flutter build web --release 
+
+      - name: Checkout web branch (create if not exists)
+        run: |
+          git fetch origin main || echo "Web branch does not exist yet"
+          git checkout -B main origin/main || git checkout -b main
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+      - name: Copy new build/web contents
+        run: |
+          mv build /tmp/build
+          rm -rf ./*
+          mv /tmp/build .
+          cp -r build/web/* .
+          rm -rf build .dart_tool
+          
+
+
+
+      - name: Commit and Push to main Branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit -m "Update web build"
+          git push origin main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
