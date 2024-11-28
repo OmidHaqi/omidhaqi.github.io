@@ -9,6 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
     return MaterialApp(
       title: 'ox0',
       home: Scaffold(
@@ -17,8 +19,8 @@ class MyApp extends StatelessWidget {
           child: Opacity(
             opacity: 0.25,
             child: Container(
-              width: 559,
-              height: 324,
+              width: w/2.8,
+              height: h/1.3,
               decoration: ShapeDecoration(
                 
                 gradient: LinearGradient(
