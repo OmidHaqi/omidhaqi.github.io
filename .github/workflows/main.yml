@@ -41,7 +41,7 @@ jobs:
           rm -rf ./*
           mv /tmp/build .
           cp -r build/web/* .
-          rm -rf build .dart_tool
+          rm -rf build .dart_tool .metadata
           
 
 
