@@ -4,9 +4,9 @@ import 'package:ox0/features/home/presentation/pages/home_desktop.dart';
 import 'package:ox0/features/home/presentation/pages/home_mobile.dart';
 import 'package:ox0/features/home/presentation/pages/home_tablet.dart';
 
-class HomeWrapper extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
-  const HomeWrapper({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
