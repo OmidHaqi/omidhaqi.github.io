@@ -9,10 +9,10 @@ class PrefsOperator {
   }
 
   changeIntroState() async {
-    sharedPreferences.setBool("showIntro", false);
+    sharedPreferences.setBool("unknow", false);
   }
 
   Future<bool> getIntroState() async {
-    return sharedPreferences.getBool("showIntro") ?? true;
+    return sharedPreferences.getBool("unknow") ?? true;
   }
 }
