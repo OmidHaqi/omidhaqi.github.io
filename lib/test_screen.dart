@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatelessWidget {
-  static const routeName = '/test-screen';
+  static const routeName = '/test';
   const TestScreen({
     super.key,
   });
