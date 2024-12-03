@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/core/config/app_theme.dart';
-import 'package:ox0/features/splash/presentation/pages/splash_screen.dart';
+import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppConstants.appName,
       theme: AppTheme.darkTheme,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       onGenerateRoute: onGenerateRoute,
     );
   }

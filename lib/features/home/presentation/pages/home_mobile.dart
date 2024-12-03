@@ -14,11 +14,10 @@ class HomeMobile extends StatelessWidget {
         child: AppContiner(
           width: 350.dp(context),
           height: 200.dp(context),
-          child: Center(
+          child: const Center(
             child: Text(
               "Mobile",
               style: TextStyle(
-                fontSize: 48.sp(context),
                 fontWeight: FontWeight.w900,
               ),
             ),
