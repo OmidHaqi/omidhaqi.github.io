@@ -2,6 +2,11 @@
     "name": "ox0",
     "short_name": "ox0",
     "start_url": "/",
+    "display_override": [
+        "fullscreen",
+        "minimal-ui",
+        "window-controls-overlay"
+    ],
     "display": "standalone",
     "background_color": "#0F0F0F",
     "theme_color": "#0F0F0F",
