@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/features/about/presentation/pages/about_screen.dart';
+import 'package:ox0/features/blog/presentation/pages/blog_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
@@ -17,6 +18,7 @@ class DesktopNavBarRouteCubit extends Cubit<Map<String, String>> {
     AboutScreen.routeName,
     WorksScreen.routeName,
     ContactScreen.routeName,
+    BlogScreen.routeName,
   ];
 
   // به‌روزرسانی مسیر جاری
