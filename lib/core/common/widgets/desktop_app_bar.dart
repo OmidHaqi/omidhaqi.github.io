@@ -5,6 +5,7 @@ import 'package:ox0/core/common/widgets/app_button.dart';
 import 'package:ox0/core/common/widgets/logo.dart';
 import 'package:ox0/core/config/app_theme.dart';
 import 'package:ox0/features/about/presentation/pages/about_screen.dart';
+import 'package:ox0/features/blog/presentation/pages/blog_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
@@ -41,6 +42,7 @@ class _NavigationButtons extends StatelessWidget {
       children: [
         _NavButton(title: 'Home', route: HomeScreen.routeName),
         _NavButton(title: 'About', route: AboutScreen.routeName),
+        _NavButton(title: 'Blog', route: BlogScreen.routeName),
         _NavButton(title: 'Works', route: WorksScreen.routeName),
         _NavButton(title: 'Contact', route: ContactScreen.routeName),
       ],
