@@ -86,7 +86,7 @@ class _NavButton extends StatelessWidget {
                     : isHovered
                         ? AppTheme.navButtonActive.copyWith(
                             color: AppTheme.activeTextColor.withOpacity(0.8),
-                            fontWeight: FontWeight.normal
+                            fontWeight: FontWeight.normal,
                           )
                         : AppTheme.navButtonInactive,
               ),

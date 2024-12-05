@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ox0/core/common/blocs/desktop_nav_bar_route_cubit/desktop_nav_bar_route_cubit.dart';
 import 'package:ox0/features/about/presentation/pages/about_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
 import 'package:ox0/features/404/presentation/page_not_found.dart';
 
-Route<dynamic>? onGenerateRoute(settings) {
+Route<dynamic>? onGenerateRoute(RouteSettings settings , BuildContext context) {
+
+  final cubit = context.read<DesktopNavBarRouteCubit>();
+
+  // مقداردهی اولیه `currentRoute`
+  if (cubit.state['currentRoute'] == '') {
+    cubit.initializeRoute(settings.name ?? '');
+  }
+
   Widget page;
   switch (settings.name) {
     case HomeScreen.routeName:
@@ -20,8 +30,8 @@ Route<dynamic>? onGenerateRoute(settings) {
     case ContactScreen.routeName:
       page = const ContactScreen();
       break;
-    // Add other routes here
     default:
+      cubit.updateRoute(''); // اگر مسیر نامعتبر است
       page = const PageNotFound();
   }
 
