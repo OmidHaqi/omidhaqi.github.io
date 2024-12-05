@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/blocs/desktop_nav_bar_route_cubit/desktop_nav_bar_route_cubit.dart';
 import 'package:ox0/features/about/presentation/pages/about_screen.dart';
+import 'package:ox0/features/blog/presentation/pages/blog_screen.dart';
+import 'package:ox0/features/blog_detalies/presentation/pages/blog_detalis_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
 import 'package:ox0/features/404/presentation/page_not_found.dart';
 
-Route<dynamic>? onGenerateRoute(RouteSettings settings , BuildContext context) {
-
+ Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
   final cubit = context.read<DesktopNavBarRouteCubit>();
 
-  // مقداردهی اولیه `currentRoute`
   if (cubit.state['currentRoute'] == '') {
     cubit.initializeRoute(settings.name ?? '');
   }
@@ -30,8 +30,14 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings , BuildContext context) {
     case ContactScreen.routeName:
       page = const ContactScreen();
       break;
+    case BlogScreen.routeName:
+      page = const BlogScreen();
+      break;
+    case '/hello':
+      page = const BlogDetailsScreen();
+      break;
     default:
-      cubit.updateRoute(''); // اگر مسیر نامعتبر است
+      cubit.updateRoute('');
       page = const PageNotFound();
   }
 
