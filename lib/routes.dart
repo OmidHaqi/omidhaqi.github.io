@@ -33,12 +33,16 @@ import 'package:ox0/features/404/presentation/page_not_found.dart';
     case BlogScreen.routeName:
       page = const BlogScreen();
       break;
-    case '/hello':
-      page = const BlogDetailsScreen();
-      break;
-    default:
-      cubit.updateRoute('');
-      page = const PageNotFound();
+   
+       default:
+      // Dynamic blog post route handling
+      if (settings.name?.startsWith('/blog/') == true) {
+        final slug = settings.name!.split('/').last;
+        page = BlogDetailsScreen(slug: slug);
+      } else {
+        cubit.updateRoute('');
+        page = const PageNotFound();
+      }
   }
 
   return PageRouteBuilder(
