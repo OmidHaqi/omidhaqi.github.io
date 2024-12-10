@@ -4,7 +4,7 @@ class BlogModel {
   final String id;
   final String title;
   final String description;
-  final String routeName;
+  final String slug;
   final String image;
   final DateTime created;
   final DateTime updated;
@@ -15,7 +15,7 @@ class BlogModel {
     required this.id,
     required this.title,
     required this.description,
-    required this.routeName,
+    required this.slug,
     required this.image,
     required this.created,
     required this.updated,
@@ -28,7 +28,7 @@ class BlogModel {
       id: json['id'],
       title: json['title'],
       description: json['description'],
-      routeName: json['route_name'],
+      slug: json['slug'],
       image: json['image'],
       created: DateTime.parse(json['created']),
       updated: DateTime.parse(json['updated']),
@@ -42,7 +42,7 @@ class BlogModel {
       'id': id,
       'title': title,
       'description': description,
-      'route_name': routeName,
+      'slug': slug,
       'image': image,
       'created': created.toIso8601String(),
       'updated': updated.toIso8601String(),
