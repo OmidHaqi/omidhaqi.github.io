@@ -7,10 +7,10 @@ class BlogBloc extends Bloc<BlogEvent, BlogState> {
   final ApiProvider apiProvider;
 
   BlogBloc(this.apiProvider) : super(BlogInitial()) {
-    on<FetchBlogPosts>(_onFetchBlogPosts);
+    on<FetchBlogPosts>(onFetchBlogPosts);
   }
 
-  Future<void> _onFetchBlogPosts(
+  Future<void> onFetchBlogPosts(
     FetchBlogPosts event,
     Emitter<BlogState> emit,
   ) async {
