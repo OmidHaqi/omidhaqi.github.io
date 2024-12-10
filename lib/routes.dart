@@ -36,7 +36,7 @@ import 'package:ox0/features/404/presentation/page_not_found.dart';
    
        default:
       // Dynamic blog post route handling
-      if (settings.name?.startsWith('/blog/') == true) {
+      if (settings.name?.startsWith('/blogs/') == true) {
         final slug = settings.name!.split('/').last;
         page = BlogDetailsScreen(slug: slug);
       } else {
