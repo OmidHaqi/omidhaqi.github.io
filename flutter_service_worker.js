@@ -5,6 +5,7 @@ const CACHE_NAME = 'flutter-app-cache';
 
 const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "main.dart.js": "d5e9ee08b3b0576ca47fe4468c6d44b1",
+"_redirects": "710122bf923daced1011024f33e23d0d",
 "assets/FontManifest.json": "05832247489d04e47110c025804420c0",
 "assets/AssetManifest.bin": "d6998b99e87f987e6cfa00489eb6f22a",
 "assets/fonts/MaterialIcons-Regular.otf": "0db35ae7a415370b89e807027510caf0",
@@ -33,6 +34,7 @@ const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "canvaskit/skwasm.wasm": "9f0c0c02b82a910d12ce0543ec130e60",
 "canvaskit/skwasm.worker.js": "89990e8c92bcb123999aa81f7e203b1c",
 "favicon.ico": "7defcd32c51840edb82840d54b1701b2",
+"nginx.conf": "5dd2ec14de566b1fbaf63484ab3166ab",
 "styles/styles.css": "72b829723c21ebda95f395adb6396077",
 "icons/ms-icon-144x144.png": "8dca0f5f51ccb62b7a978837bba0b38f",
 "icons/android-icon-72x72.png": "6080584325bf8416863d00ff894ee34f",
@@ -59,7 +61,7 @@ const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "icons/ms-icon-70x70.png": "fe76bf494473d96ef29f2d01e813fa98",
 "icons/favicon-96x96.png": "52265f0b20ffcd0d95fd5f5cda54c276",
 "version.json": "17d91ea3e77f9e1abfa89673a11190f0",
-"flutter_bootstrap.js": "73dbe7ce1aa01ac2b028150e24da3ad7"};
+"flutter_bootstrap.js": "44468b0b44451ffe17926c461a205db8"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
