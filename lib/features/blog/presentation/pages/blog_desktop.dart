@@ -26,8 +26,16 @@ class BlogDesktop extends StatelessWidget {
 
         return Scaffold(
           body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const DesktopAppBar(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 30),
+                child: Text(
+                  'Blogs',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+              ),
               BlocBuilder<BlogBloc, BlogState>(
                 builder: (context, state) {
                   if (state is BlogLoading) {
@@ -35,65 +43,67 @@ class BlogDesktop extends StatelessWidget {
                   }
                   if (state is BlogLoaded) {
                     return Expanded(
-                      child: GridView.builder(
-                        itemCount: state.posts.length,
-                        itemBuilder: (context, index) {
-                          final post = state.posts[index];
-
-                          return AppContiner(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                context,
-                                BlogDetailsScreen.routeName(post.routeName),
-                                arguments: post,
-                              );
-                               BlogDetailsScreen.routeName(post.routeName);
-                               log(BlogDetailsScreen.routeName.toString());
-                              
-                            },
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        '${AppConstants.baseUrl}/api/files/${post.collectionName}/${post.id}/${post.image}',
-                                        fit: BoxFit.cover,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 200 ),
+                        child: GridView.builder(
+                          itemCount: state.posts.length,
+                          itemBuilder: (context, index) {
+                            final post = state.posts[index];
+                        
+                            return AppContiner(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                 '/blog${post.slug}',
+                                  arguments: post,
+                                );
+                                 log(BlogDetailsScreen.routeName.toString());
+                                
+                              },
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          '${AppConstants.baseUrl}/api/files/${post.collectionName}/${post.id}/${post.image}',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                ListTile(
-                                  title: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      post.title,
+                                  ListTile(
+                                    title: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        post.title,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                    subtitle: Text(
+                                      post.description,
                                       overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                      style: const TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
+                                      maxLines: 3,
                                     ),
                                   ),
-                                  subtitle: Text(
-                                    post.description,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 3,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 5,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
+                                ],
+                              ),
+                            );
+                          },
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                          ),
                         ),
                       ),
                     );
