@@ -17,8 +17,8 @@ class BlogDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => BlogBloc(ApiProvider())
-        ..add(FetchSingleBlogPost(slug)),
+      create: (context) =>
+          BlogBloc(ApiProvider())..add(FetchSingleBlogPost(slug)),
       child: LayoutBuilder(
         builder: (context, constraints) {
           if (Responsive.isDesktop(context)) {

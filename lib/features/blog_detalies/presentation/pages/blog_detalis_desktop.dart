@@ -5,7 +5,8 @@ import 'package:ox0/features/blog/data/models/blog_model.dart';
 class BlogDetalisDesktop extends StatelessWidget {
   final BlogModel postDetails;
   const BlogDetalisDesktop({
-    super.key, required this.postDetails,
+    super.key,
+    required this.postDetails,
   });
 
   @override

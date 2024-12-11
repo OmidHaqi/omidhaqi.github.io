@@ -10,7 +10,7 @@ class PageNotFound extends StatelessWidget {
   });
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     if (Responsive.isDesktop(context)) {
       return const PageNotFoundDesktop();
     } else if (Responsive.isTablet(context)) {
@@ -20,4 +20,3 @@ class PageNotFound extends StatelessWidget {
     }
   }
 }
-

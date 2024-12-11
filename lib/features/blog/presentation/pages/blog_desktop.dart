@@ -10,10 +10,8 @@ import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
 import 'package:ox0/features/blog_detalies/presentation/pages/blog_detalis_screen.dart';
 
 class BlogDesktop extends StatelessWidget {
-  
   const BlogDesktop({
     super.key,
-    
   });
 
   @override
@@ -30,7 +28,8 @@ class BlogDesktop extends StatelessWidget {
             children: [
               const DesktopAppBar(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 200, vertical: 30),
                 child: Text(
                   'Blogs',
                   style: Theme.of(context).textTheme.displayMedium,
@@ -44,12 +43,12 @@ class BlogDesktop extends StatelessWidget {
                   if (state is BlogLoaded) {
                     return Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 200 ),
+                        padding: const EdgeInsets.symmetric(horizontal: 200),
                         child: GridView.builder(
                           itemCount: state.posts.length,
                           itemBuilder: (context, index) {
                             final post = state.posts[index];
-                        
+
                             return AppContiner(
                               onTap: () {
                                 Navigator.pushNamed(
@@ -57,8 +56,7 @@ class BlogDesktop extends StatelessWidget {
                                   '/blogs/${post.slug}', // Corrected route name
                                   arguments: post,
                                 );
-                                 log(BlogDetailsScreen.routeName.toString());
-                                
+                                log(BlogDetailsScreen.routeName.toString());
                               },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +66,8 @@ class BlogDesktop extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(16),
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8.0),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                         child: Image.network(
                                           '${AppConstants.baseUrl}/api/files/${post.collectionName}/${post.id}/${post.image}',
                                           fit: BoxFit.cover,

@@ -9,7 +9,7 @@ import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
 import 'package:ox0/features/404/presentation/page_not_found.dart';
 
- Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
+Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
   final cubit = context.read<DesktopNavBarRouteCubit>();
 
   if (cubit.state['currentRoute'] == '') {
@@ -33,8 +33,8 @@ import 'package:ox0/features/404/presentation/page_not_found.dart';
     case BlogScreen.routeName:
       page = const BlogScreen();
       break;
-   
-       default:
+
+    default:
       // Dynamic blog post route handling
       if (settings.name?.startsWith('/blogs/') == true) {
         final slug = settings.name!.split('/').last;
