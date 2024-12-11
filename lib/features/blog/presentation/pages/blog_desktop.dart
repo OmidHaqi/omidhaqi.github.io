@@ -54,7 +54,7 @@ class BlogDesktop extends StatelessWidget {
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
-                                 '/blog${post.slug}',
+                                  '/blogs/${post.slug}', // Corrected route name
                                   arguments: post,
                                 );
                                  log(BlogDetailsScreen.routeName.toString());
