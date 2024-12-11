@@ -4,7 +4,7 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
 const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
-"main.dart.js": "d5e9ee08b3b0576ca47fe4468c6d44b1",
+"main.dart.js": "4b47a7d007f69a749aaf24e22fec29c2",
 "_redirects": "710122bf923daced1011024f33e23d0d",
 "assets/FontManifest.json": "05832247489d04e47110c025804420c0",
 "assets/AssetManifest.bin": "d6998b99e87f987e6cfa00489eb6f22a",
@@ -35,7 +35,7 @@ const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "canvaskit/skwasm.worker.js": "89990e8c92bcb123999aa81f7e203b1c",
 "favicon.ico": "7defcd32c51840edb82840d54b1701b2",
 "nginx.conf": "5dd2ec14de566b1fbaf63484ab3166ab",
-"styles/styles.css": "72b829723c21ebda95f395adb6396077",
+"styles/styles.css": "3cdbbb23deaea151813cc7d75fe15188",
 "icons/ms-icon-144x144.png": "8dca0f5f51ccb62b7a978837bba0b38f",
 "icons/android-icon-72x72.png": "6080584325bf8416863d00ff894ee34f",
 "icons/android-icon-36x36.png": "f1587297e4b6de56256ea762f9b0d413",
@@ -60,8 +60,9 @@ const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "icons/apple-icon-152x152.png": "25455cc02226c3b6526693f4a4ec74e9",
 "icons/ms-icon-70x70.png": "fe76bf494473d96ef29f2d01e813fa98",
 "icons/favicon-96x96.png": "52265f0b20ffcd0d95fd5f5cda54c276",
+"404.html": "5492c8f0090d59a2d5e7fe15a775317f",
 "version.json": "17d91ea3e77f9e1abfa89673a11190f0",
-"flutter_bootstrap.js": "44468b0b44451ffe17926c461a205db8"};
+"flutter_bootstrap.js": "b7b3e4d0c5c726cec068c36b40078b45"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",

@@ -17,6 +17,8 @@ body {
     justify-content: center;
     background-color: #0F0F0F;
     z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .progressive-dots {
@@ -42,6 +44,27 @@ body {
 
 .dot:nth-child(4) {
     animation-delay: 0.9s;
+}
+
+@media (max-width: 600px) {
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @keyframes bounce {
