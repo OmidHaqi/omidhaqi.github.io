@@ -6,3 +6,12 @@ abstract class BlogEvent extends Equatable {
 }
 
 class FetchBlogPosts extends BlogEvent {}
+
+class FetchSingleBlogPost extends BlogEvent {
+  final String slug;
+
+  FetchSingleBlogPost(this.slug);
+
+  @override
+  List<Object?> get props => [slug];
+}

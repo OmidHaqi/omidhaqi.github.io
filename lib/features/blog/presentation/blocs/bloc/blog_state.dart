@@ -27,3 +27,12 @@ class BlogError extends BlogState {
   @override
   List<Object?> get props => [errorMessage];
 }
+
+class BlogPostLoaded extends BlogState {
+  final BlogModel post;
+
+  BlogPostLoaded(this.post);
+
+  @override
+  List<Object?> get props => [post];
+}

@@ -8,6 +8,7 @@ class BlogBloc extends Bloc<BlogEvent, BlogState> {
 
   BlogBloc(this.apiProvider) : super(BlogInitial()) {
     on<FetchBlogPosts>(onFetchBlogPosts);
+    on<FetchSingleBlogPost>(onFetchSingleBlogPost);
   }
 
   Future<void> onFetchBlogPosts(
@@ -19,6 +20,24 @@ class BlogBloc extends Bloc<BlogEvent, BlogState> {
     try {
       await apiProvider.getPosts();
       emit(BlogLoaded(apiProvider.postList));
+    } catch (e) {
+      emit(BlogError(e.toString()));
+    }
+  }
+
+  Future<void> onFetchSingleBlogPost(
+    FetchSingleBlogPost event,
+    Emitter<BlogState> emit,
+  ) async {
+    emit(BlogLoading());
+
+    try {
+      final post = await apiProvider.getPostBySlug(event.slug);
+      if (post != null) {
+        emit(BlogPostLoaded(post));
+      } else {
+        emit(BlogError('Post not found'));
+      }
     } catch (e) {
       emit(BlogError(e.toString()));
     }
