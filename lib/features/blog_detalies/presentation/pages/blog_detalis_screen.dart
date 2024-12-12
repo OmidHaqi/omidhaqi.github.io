@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ox0/core/config/responsive.dart';
+import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/features/blog/data/datasources/api_provider.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_event.dart';
@@ -21,20 +21,20 @@ class BlogDetailsScreen extends StatelessWidget {
           BlogBloc(ApiProvider())..add(FetchSingleBlogPost(slug)),
       child: LayoutBuilder(
         builder: (context, constraints) {
-          if (Responsive.isDesktop(context)) {
-            return BlocBuilder<BlogBloc, BlogState>(
-              builder: (context, state) {
-                if (state is BlogPostLoaded) {
+          return BlocBuilder<BlogBloc, BlogState>(
+            builder: (context, state) {
+              if (state is BlogPostLoaded) {
+                if (Responsive.isDesktop(context)) {
                   return BlogDetalisDesktop(postDetails: state.post);
+                } else if (Responsive.isTablet(context)) {
+                  return BlogDetalisTablet(postDetails: state.post);
+                } else {
+                  return BlogDetalisMobile(postDetails: state.post);
                 }
-                return const Center(child: CircularProgressIndicator());
-              },
-            );
-          } else if (Responsive.isTablet(context)) {
-            return const BlogDetalisTablet();
-          } else {
-            return const BlogDetalisMobile();
-          }
+              }
+              return const Center(child: CircularProgressIndicator());
+            },
+          );
         },
       ),
     );
