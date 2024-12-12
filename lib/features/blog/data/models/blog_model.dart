@@ -4,6 +4,7 @@ class BlogModel {
   final String id;
   final String title;
   final String description;
+  final String author;
   final String slug;
   final String image;
   final DateTime created;
@@ -15,6 +16,7 @@ class BlogModel {
     required this.id,
     required this.title,
     required this.description,
+    required this.author,
     required this.slug,
     required this.image,
     required this.created,
@@ -28,6 +30,7 @@ class BlogModel {
       id: json['id'],
       title: json['title'],
       description: json['description'],
+      author: json['author'],
       slug: json['slug'],
       image: json['image'],
       created: DateTime.parse(json['created']),
@@ -42,6 +45,7 @@ class BlogModel {
       'id': id,
       'title': title,
       'description': description,
+      'author': author,
       'slug': slug,
       'image': image,
       'created': created.toIso8601String(),
