@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.4"
+  blurbox:
+    dependency: "direct main"
+    description:
+      name: blurbox
+      sha256: "5b8e8550ae54730293230509ae783f62b177b9a38e33d3c23c8f814a39219ba0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   boolean_selector:
     dependency: transitive
     description:
