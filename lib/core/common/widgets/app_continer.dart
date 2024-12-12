@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppContiner extends StatelessWidget {
   final double? width;
   final double? height;
+  final EdgeInsetsGeometry? margin;
   final Widget child;
   final double borderRadius = 30;
   final double borderWidth = 1;
@@ -13,6 +14,7 @@ class AppContiner extends StatelessWidget {
     this.height,
     this.onTap,
     required this.child,
+    this.margin,
   });
 
   @override
@@ -22,6 +24,7 @@ class AppContiner extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
+        margin: margin,
         foregroundDecoration: ShapeDecoration(
           gradient: LinearGradient(
             begin: const Alignment(0.87, -0.50),
