@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ox0/core/config/responsive.dart';
+import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/features/blog/data/datasources/api_provider.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_event.dart';
