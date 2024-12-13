@@ -1,5 +1,6 @@
 :root {
   --primary-color: #323232;
+  --base-font-size: 16px;
 }
 
 body {
@@ -70,6 +71,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .shimmer-line {
@@ -112,4 +115,83 @@ body {
 
 .shimmer-line:nth-child(3) {
   width: 200px;
+}
+
+/* Mobile Screens (< 768px) */
+@media screen and (max-width: 767px) {
+  :root {
+    --base-font-size: 14px;
+  }
+
+  .shimmer-line {
+    width: 80vw;
+    max-width: 280px;
+    height: 15px;
+  }
+
+  .shimmer-line:nth-child(2) {
+    width: 70vw;
+    max-width: 240px;
+  }
+
+  .shimmer-line:nth-child(3) {
+    width: 60vw;
+    max-width: 200px;
+  }
+}
+
+/* Tablet Screens (768px - 1199px) */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  :root {
+    --base-font-size: 15px;
+  }
+
+  .shimmer-line {
+    width: 70vw;
+    max-width: 400px;
+    height: 18px;
+  }
+
+  .shimmer-line:nth-child(2) {
+    width: 60vw;
+    max-width: 350px;
+  }
+
+  .shimmer-line:nth-child(3) {
+    width: 50vw;
+    max-width: 300px;
+  }
+}
+
+/* Desktop Screens (≥ 1200px) */
+@media screen and (min-width: 1200px) {
+  .shimmer-line {
+    width: 50vw;
+    max-width: 500px;
+    height: 20px;
+  }
+
+  .shimmer-line:nth-child(2) {
+    width: 40vw;
+    max-width: 450px;
+  }
+
+  .shimmer-line:nth-child(3) {
+    width: 30vw;
+    max-width: 400px;
+  }
+}
+
+/* Scale animations for different devices */
+@media (prefers-reduced-motion: no-preference) {
+  .shimmer-line::before {
+    animation-duration: 2s;
+  }
+}
+
+/* High-DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .shimmer-line {
+    transform: translateZ(0);
+  }
 }
