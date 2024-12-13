@@ -4,6 +4,7 @@ class BlogModel {
   final String id;
   final String title;
   final String description;
+  final String details;
   final String author;
   final String slug;
   final String image;
@@ -16,6 +17,7 @@ class BlogModel {
     required this.id,
     required this.title,
     required this.description,
+    required this.details,
     required this.author,
     required this.slug,
     required this.image,
@@ -30,6 +32,7 @@ class BlogModel {
       id: json['id'],
       title: json['title'],
       description: json['description'],
+      details: json['details'],
       author: json['author'],
       slug: json['slug'],
       image: json['image'],
@@ -45,6 +48,7 @@ class BlogModel {
       'id': id,
       'title': title,
       'description': description,
+      'details': details,
       'author': author,
       'slug': slug,
       'image': image,
