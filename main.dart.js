@@ -22412,7 +22412,7 @@ s=s[2]
 p=b[2]
 return A.a([o*m+l*k+j*n,o*r+l*q+j*s,o*p[0]+l*p[1]+j*p[2]],t.n)},
 pz(a){var s=t.w
-return A.b7(a,null,s).w.a.a<1100&&A.b7(a,null,s).w.a.a>=600},
+return A.b7(a,null,s).w.a.a<1200&&A.b7(a,null,s).w.a.a>=768},
 adR(){var s=0,r=A.O(t.H),q,p,o
 var $async$adR=A.P(function(a,b){if(a===1)return A.L(b,r)
 while(true)switch(s){case 0:s=2
@@ -65211,7 +65211,7 @@ A.a00.prototype={
 $0(){A.F8(this.a).MR(null)},
 $S:0}
 A.Fp.prototype={
-G(a){if(A.b7(a,null,t.w).w.a.a>=1100)return B.Fe
+G(a){if(A.b7(a,null,t.w).w.a.a>=1200)return B.Fe
 else if(A.pz(a))return B.Fg
 else return B.Ff}}
 A.Fq.prototype={
@@ -65225,7 +65225,7 @@ G(a){return B.Gs}}
 A.Be.prototype={
 G(a){return B.Gu}}
 A.Bf.prototype={
-G(a){if(A.b7(a,null,t.w).w.a.a>=1100)return B.vQ
+G(a){if(A.b7(a,null,t.w).w.a.a>=1200)return B.vQ
 else if(A.pz(a))return B.vT
 else return B.vR}}
 A.Bg.prototype={
@@ -65428,7 +65428,7 @@ s.A(0,new A.m7())
 return s},
 $S:157}
 A.a75.prototype={
-$2(a,b){if(A.b7(a,null,t.w).w.a.a>=1100)return B.wg
+$2(a,b){if(A.b7(a,null,t.w).w.a.a>=1200)return B.wg
 else if(A.pz(a))return B.wj
 else return B.wh},
 $S:431}
@@ -65483,7 +65483,7 @@ $2(a,b){return A.lB(new A.Ri(),t.r9,t.aM)},
 $S:432}
 A.Ri.prototype={
 $2(a,b){var s,r=null
-if(b instanceof A.rY)if(A.b7(a,r,t.w).w.a.a>=1100)return new A.BL(b.a,r)
+if(b instanceof A.rY)if(A.b7(a,r,t.w).w.a.a>=1200)return new A.BL(b.a,r)
 else{s=b.a
 if(A.pz(a))return new A.BN(s,r)
 else return new A.BM(s,r)}return B.cb},
@@ -65499,7 +65499,7 @@ G(a){return B.Gz}}
 A.Cx.prototype={
 G(a){return B.GA}}
 A.Cy.prototype={
-G(a){if(A.b7(a,null,t.w).w.a.a>=1100)return B.yT
+G(a){if(A.b7(a,null,t.w).w.a.a>=1200)return B.yT
 else if(A.pz(a))return B.yW
 else return B.yU}}
 A.Cz.prototype={
@@ -65510,7 +65510,7 @@ A.DY.prototype={
 G(a){var s=null,r=t.w
 return A.nc(s,A.f9(new A.hr(350*A.b7(a,s,r).w.b,200*A.b7(a,s,r).w.b,s,B.xW,s,s),s,s),s)}}
 A.DZ.prototype={
-G(a){if(A.b7(a,null,t.w).w.a.a>=1100)return B.A7
+G(a){if(A.b7(a,null,t.w).w.a.a>=1200)return B.A7
 else if(A.pz(a))return B.Aa
 else return B.A8}}
 A.E_.prototype={
@@ -65521,7 +65521,7 @@ G(a){return B.Gp}}
 A.Iu.prototype={
 G(a){return B.Gv}}
 A.Iv.prototype={
-G(a){if(A.b7(a,null,t.w).w.a.a>=1100)return B.NR
+G(a){if(A.b7(a,null,t.w).w.a.a>=1200)return B.NR
 else if(A.pz(a))return B.NU
 else return B.NS}}
 A.Iw.prototype={
