@@ -23,6 +23,7 @@ dependencies:
   pocketbase: ^0.19.1
   equatable: ^2.0.7
   blurbox: ^0.0.4
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
