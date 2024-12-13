@@ -34,7 +34,6 @@ class BlogDetailsScreen extends StatelessWidget {
                 }
               }
               return const LoadingWidget();
-              
             },
           );
         },

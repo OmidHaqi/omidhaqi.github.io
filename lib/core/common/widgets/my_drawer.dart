@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class MyDrawer extends StatelessWidget {
   final Widget child;
   const MyDrawer({
-    super.key, required this.child,
+    super.key,
+    required this.child,
   });
 
   @override

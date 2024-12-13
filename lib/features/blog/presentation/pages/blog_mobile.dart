@@ -10,7 +10,6 @@ import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
 
-
 class BlogMobile extends StatelessWidget {
   const BlogMobile({super.key});
 
@@ -24,7 +23,9 @@ class BlogMobile extends StatelessWidget {
         }
 
         return Scaffold(
-          drawer:const MyDrawer(child: SizedBox.shrink(),),
+          drawer: const MyDrawer(
+            child: SizedBox.shrink(),
+          ),
           appBar: AppBar(
             toolbarHeight: size.height * 0.1,
             title: Row(

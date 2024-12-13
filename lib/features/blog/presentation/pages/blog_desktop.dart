@@ -7,6 +7,7 @@ import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
+
 class BlogDesktop extends StatelessWidget {
   const BlogDesktop({
     super.key,
