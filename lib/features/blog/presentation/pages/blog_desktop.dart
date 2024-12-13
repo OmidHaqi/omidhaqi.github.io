@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/extension.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
 import 'package:ox0/core/common/widgets/desktop_app_bar.dart';
+import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
-
 class BlogDesktop extends StatelessWidget {
   const BlogDesktop({
     super.key,
@@ -18,7 +18,7 @@ class BlogDesktop extends StatelessWidget {
     return BlocBuilder<BlogBloc, BlogState>(
       builder: (context, state) {
         if (state is BlogLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const LoadingWidget();
         }
 
         return Scaffold(
@@ -27,10 +27,10 @@ class BlogDesktop extends StatelessWidget {
             children: [
               const DesktopAppBar(),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
+                padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.10,
                   vertical: 30,
-                ), // Adjusted padding
+                ),
                 child: Text(
                   'Blogs',
                   style: Theme.of(context).textTheme.displayMedium,
@@ -38,17 +38,12 @@ class BlogDesktop extends StatelessWidget {
               ),
               BlocBuilder<BlogBloc, BlogState>(
                 builder: (context, state) {
-                  if (state is BlogLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
                   if (state is BlogLoaded) {
                     return Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                        ), // Adjusted padding
+                        padding: EdgeInsets.symmetric(
+                          horizontal: size.width * 0.10,
+                        ),
                         child: GridView.builder(
                           itemCount: state.posts.length,
                           gridDelegate:
