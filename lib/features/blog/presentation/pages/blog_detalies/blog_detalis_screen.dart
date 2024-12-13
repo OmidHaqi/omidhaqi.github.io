@@ -19,7 +19,7 @@ class BlogDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          BlogBloc(BlogApiProvider())..add(FetchSingleBlogPost(slug)),
+          BlogBloc(BlogApiProvider())..add(FetchSingleBlogPost(slug),),
       child: LayoutBuilder(
         builder: (context, constraints) {
           return BlocBuilder<BlogBloc, BlogState>(

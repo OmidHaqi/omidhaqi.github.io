@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:ox0/core/common/widgets/app_button.dart';
 import 'package:ox0/core/common/widgets/logo.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
@@ -35,7 +36,7 @@ class BlogDetalisTablet extends StatelessWidget {
         children: [
           Expanded(
             child: Center(
-              child: Text(postDetails.title),
+              child: HtmlWidget(postDetails.details),
             ),
           ),
         ],

@@ -27,7 +27,7 @@ class BlogApiProvider {
     }
   }
 
-  Future<BlogModel?> getPostBySlug(String slug) async {
+  getPostBySlug(String slug) async {
     try {
       final record =
           await pb.collection('blogs').getFirstListItem('slug="$slug"');
