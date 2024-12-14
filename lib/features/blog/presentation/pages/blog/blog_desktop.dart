@@ -5,8 +5,7 @@ import 'package:ox0/core/common/widgets/app_continer.dart';
 import 'package:ox0/core/common/widgets/desktop_app_bar.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/config/app_constants.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
+import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
 
 class BlogDesktop extends StatelessWidget {
   const BlogDesktop({
@@ -16,14 +15,14 @@ class BlogDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
-    return BlocBuilder<BlogBloc, BlogState>(
-      builder: (context, state) {
-        if (state is BlogLoading) {
-          return const LoadingWidget();
-        }
+    return Scaffold(
+      body: BlocBuilder<BlogBloc, BlogState>(
+        builder: (context, state) {
+          if (state is BlogLoading) {
+            return const LoadingWidget();
+          }
 
-        return Scaffold(
-          body: Column(
+          return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const DesktopAppBar(),
@@ -159,9 +158,9 @@ class BlogDesktop extends StatelessWidget {
                 },
               ),
             ],
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

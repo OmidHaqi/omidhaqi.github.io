@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/features/blog/data/datasources/blog_api_provider.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_event.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
+import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
 import 'package:ox0/features/blog/presentation/pages/blog_detalies/blog_detalis_desktop.dart';
 import 'package:ox0/features/blog/presentation/pages/blog_detalies/blog_detalis_mobile.dart';
 import 'package:ox0/features/blog/presentation/pages/blog_detalies/blog_detalis_tablet.dart';
@@ -18,8 +16,11 @@ class BlogDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          BlogBloc(BlogApiProvider())..add(FetchSingleBlogPost(slug),),
+      create: (context) => BlogBloc(
+        BlogApiProvider(),
+      )..add(
+          FetchSingleBlogPost(slug),
+        ),
       child: LayoutBuilder(
         builder: (context, constraints) {
           return BlocBuilder<BlogBloc, BlogState>(

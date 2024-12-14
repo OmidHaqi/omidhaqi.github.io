@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:ox0/features/blog/data/models/blog_model.dart';
+part of 'blog_bloc.dart';
 
 abstract class BlogState extends Equatable {
   @override

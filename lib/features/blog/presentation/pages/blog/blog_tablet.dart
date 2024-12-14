@@ -7,8 +7,7 @@ import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/common/widgets/logo.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
 import 'package:ox0/core/config/app_constants.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_bloc.dart';
-import 'package:ox0/features/blog/presentation/blocs/bloc/blog_state.dart';
+import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
 
 class BlogTablet extends StatelessWidget {
   const BlogTablet({super.key});
