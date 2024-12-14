@@ -10,7 +10,6 @@ main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initLocator();
-
   usePathUrlStrategy();
 
   runApp(
