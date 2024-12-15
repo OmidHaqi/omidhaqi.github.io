@@ -144,7 +144,9 @@ class HomeDesktop extends StatelessWidget {
                                         height: size.height * 0.235,
                                         width: size.width * 0.13,
                                         padding:
-                                            EdgeInsets.all(size.width * 0.001),
+                                            EdgeInsets.symmetric(horizontal:  size.width * 0.001,
+                                            vertical:  size.width * 0.002,
+                                            ),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -222,7 +224,10 @@ class HomeDesktop extends StatelessWidget {
                                         height: size.height * 0.235,
                                         width: size.width * 0.13,
                                         padding:
-                                            EdgeInsets.all(size.width * 0.001),
+                                            EdgeInsets.symmetric(
+                                          horizontal: size.width * 0.001,
+                                          vertical: size.width * 0.002,
+                                        ),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -309,7 +314,10 @@ class HomeDesktop extends StatelessWidget {
                               AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.13,
-                                padding: EdgeInsets.all(size.width * 0.001),
+                                padding:  EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.001,
+                                  vertical: size.width * 0.002,
+                                ),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -538,10 +546,11 @@ class HomeDesktop extends StatelessWidget {
                                     AppContainer(
                                       margin: const EdgeInsets.all(10),
                                       child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Container(
-                                            width: size.width * 0.05,
-                                            height: size.width * 0.05,
+                                            width: size.width * 0.04,
+                                            height: size.width * 0.04,
                                             margin: EdgeInsets.all(
                                                 size.width * 0.005),
                                             padding: EdgeInsets.all(
@@ -559,11 +568,12 @@ class HomeDesktop extends StatelessWidget {
                                               ),
                                             ),
                                             child: SvgPicture.asset(
-                                                'assets/icons/ic_telegram.svg'),
+                                                'assets/icons/ic_telegram.svg',
+                                                ),
                                           ),
                                           Container(
-                                            width: size.width * 0.05,
-                                            height: size.width * 0.05,
+                                             width: size.width * 0.04,
+                                            height: size.width * 0.04,
                                             margin: EdgeInsets.all(
                                                 size.width * 0.005),
                                             padding: EdgeInsets.all(
@@ -585,8 +595,8 @@ class HomeDesktop extends StatelessWidget {
                                             ),
                                           ),
                                           Container(
-                                            width: size.width * 0.05,
-                                            height: size.width * 0.05,
+                                             width: size.width * 0.04,
+                                            height: size.width * 0.04,
                                             margin: EdgeInsets.all(
                                               size.width * 0.005,
                                             ),
@@ -693,11 +703,11 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          const Text(
+                                           Text(
                                             'YEARS XP',
                                             style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white,
+                                              color: Colors.white
+                                                  .withValues(alpha: 0.7),
                                             ),
                                             textAlign: TextAlign.center,
                                             maxLines: 2,
@@ -723,11 +733,11 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          const Text(
+                                           Text(
                                             'CLIENTS WORLDWIDE',
                                             style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white,
+                                              color: Colors.white
+                                                    .withValues(alpha: 0.7)
                                             ),
                                             textAlign: TextAlign.center,
                                             maxLines: 2,
@@ -753,11 +763,11 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          const Text(
+                                           Text(
                                             'TOTAL PROJECTS',
                                             style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white,
+                                             color: Colors.white
+                                                    .withValues(alpha: 0.7)
                                             ),
                                             textAlign: TextAlign.center,
                                             maxLines: 2,
