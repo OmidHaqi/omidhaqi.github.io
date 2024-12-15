@@ -34,7 +34,7 @@ class DesktopAppBar extends StatelessWidget  implements PreferredSizeWidget {
   }
   
   @override
-  Size get preferredSize => Size.fromHeight(size.height * 0.25);
+  Size get preferredSize => Size.fromHeight(size.height * 0.15);
 }
 
 class _NavigationButtons extends StatelessWidget {
@@ -91,7 +91,7 @@ class _NavButton extends StatelessWidget {
                     ? AppTheme.navButtonActive
                     : isHovered
                         ? AppTheme.navButtonActive.copyWith(
-                            color: AppTheme.activeTextColor.withOpacity(0.8),
+                            color: AppTheme.activeTextColor.withValues(alpha: 0.8),
                             fontWeight: FontWeight.normal,
                           )
                         : AppTheme.navButtonInactive,

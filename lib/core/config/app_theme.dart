@@ -48,6 +48,7 @@ class AppTheme {
   );
 
   static final darkTheme = ThemeData(
+    
     fontFamily: 'Ubuntu',
     brightness: Brightness.dark,
     primaryColor: primaryColor,
@@ -90,7 +91,6 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: backgroundColor,
       elevation: 0,
-      centerTitle: true,
     ),
     dividerTheme: const DividerThemeData(
       color: inactiveTextColor,
