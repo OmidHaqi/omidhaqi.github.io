@@ -11,7 +11,7 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: AppContiner(
+        child: AppContainer(
           width: 350.dp(context),
           height: 200.dp(context),
           child: const Center(

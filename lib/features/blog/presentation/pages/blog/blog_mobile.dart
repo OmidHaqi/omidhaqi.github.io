@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/extension.dart';
 import 'package:ox0/core/common/widgets/app_button.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/common/widgets/logo.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
@@ -41,7 +42,8 @@ class BlogMobile extends StatelessWidget {
             ),
           ),
           body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -72,7 +74,7 @@ class BlogMobile extends StatelessWidget {
                             itemBuilder: (context, index) {
                               final post = state.posts[index];
 
-                              return AppContiner(
+                              return AppContainer(
                                 width: size.width * 0.05,
                                 height: size.height * 0.60,
                                 margin: const EdgeInsets.all(8),
@@ -178,6 +180,7 @@ class BlogMobile extends StatelessWidget {
                   return const Center(child: Text('No Posts Available'));
                 },
               ),
+              const AppFooter()
             ],
           ),
         );

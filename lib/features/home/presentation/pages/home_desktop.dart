@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/app_footer.dart';
 
 import 'package:ox0/core/common/widgets/desktop_app_bar.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
@@ -42,7 +43,7 @@ class HomeDesktop extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppContiner(
+                              AppContainer(
                                 width: size.width * 0.35,
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -127,7 +128,7 @@ class HomeDesktop extends StatelessWidget {
                               Column(
                                 spacing: 20,
                                 children: [
-                                  AppContiner(
+                                  AppContainer(
                                     width: size.width * 0.28,
                                     padding: EdgeInsets.all(size.width * 0.01),
                                     child: const Text(
@@ -139,7 +140,7 @@ class HomeDesktop extends StatelessWidget {
                                     spacing: size.width * 0.02,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      AppContiner(
+                                      AppContainer(
                                         height: size.height * 0.235,
                                         width: size.width * 0.13,
                                         padding:
@@ -217,7 +218,7 @@ class HomeDesktop extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      AppContiner(
+                                      AppContainer(
                                         height: size.height * 0.235,
                                         width: size.width * 0.13,
                                         padding:
@@ -305,7 +306,7 @@ class HomeDesktop extends StatelessWidget {
                             spacing: size.width * 0.01,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppContiner(
+                              AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.13,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -372,7 +373,7 @@ class HomeDesktop extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AppContiner(
+                              AppContainer(
                                 width: size.width * 0.29,
                                 height: size.height * 0.235,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -526,7 +527,7 @@ class HomeDesktop extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AppContiner(
+                              AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.2,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -534,7 +535,7 @@ class HomeDesktop extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    AppContiner(
+                                    AppContainer(
                                       margin: const EdgeInsets.all(10),
                                       child: Row(
                                         children: [
@@ -639,7 +640,10 @@ class HomeDesktop extends StatelessWidget {
                                                 height: size.height * 0.03,
                                                 child: const Text(
                                                   'Profiles',
-                                                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -664,14 +668,14 @@ class HomeDesktop extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppContiner(
+                              AppContainer(
                                 width: size.width * 0.32,
                                 height: size.height * 0.235,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
-                                    AppContiner(
+                                    AppContainer(
                                       width: size.width * 0.07,
                                       height: size.width * 0.09,
                                       child: Column(
@@ -689,7 +693,7 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             'YEARS XP',
                                             style: TextStyle(
                                               fontSize: 18,
@@ -701,7 +705,7 @@ class HomeDesktop extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    AppContiner(
+                                    AppContainer(
                                       width: size.width * 0.07,
                                       height: size.width * 0.09,
                                       child: Column(
@@ -719,7 +723,7 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             'CLIENTS WORLDWIDE',
                                             style: TextStyle(
                                               fontSize: 18,
@@ -731,7 +735,7 @@ class HomeDesktop extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    AppContiner(
+                                    AppContainer(
                                       width: size.width * 0.07,
                                       height: size.width * 0.09,
                                       child: Column(
@@ -749,7 +753,7 @@ class HomeDesktop extends StatelessWidget {
                                                   .withValues(alpha: 0.5),
                                             ),
                                           ),
-                                          Text(
+                                          const Text(
                                             'TOTAL PROJECTS',
                                             style: TextStyle(
                                               fontSize: 18,
@@ -764,7 +768,7 @@ class HomeDesktop extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AppContiner(
+                              AppContainer(
                                 width: size.width * 0.32,
                                 height: size.height * 0.235,
                                 child: Row(
@@ -787,7 +791,7 @@ class HomeDesktop extends StatelessWidget {
                                         Padding(
                                           padding: EdgeInsets.only(
                                               left: size.width * 0.01),
-                                          child: Column(
+                                          child: const Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
@@ -818,7 +822,7 @@ class HomeDesktop extends StatelessWidget {
                                                 )
                                               ]),
                                         ),
-                                        SizedBox(height: 10)
+                                        const SizedBox(height: 10)
                                       ],
                                     ),
                                     Padding(
@@ -835,23 +839,7 @@ class HomeDesktop extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            child: Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '© All rights reserved by  ',
-                                  ),
-                                  TextSpan(
-                                    text: 'Umut',
-                                    style: TextStyle(
-                                        color: Color(0xff0A58CA),
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
+                          const AppFooter()
                         ],
                       ),
                     ),

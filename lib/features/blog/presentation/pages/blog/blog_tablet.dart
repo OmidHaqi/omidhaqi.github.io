@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/extension.dart';
 import 'package:ox0/core/common/widgets/app_button.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/common/widgets/logo.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
@@ -15,12 +16,7 @@ class BlogTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
-    return BlocBuilder<BlogBloc, BlogState>(
-      builder: (context, state) {
-        if (state is BlogLoading) {
-          return const LoadingWidget();
-        }
-
+     
         return Scaffold(
           drawer: const MyDrawer(
             child: SizedBox.shrink(),
@@ -41,7 +37,8 @@ class BlogTablet extends StatelessWidget {
             ),
           ),
           body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -77,7 +74,7 @@ class BlogTablet extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final post = state.posts[index];
 
-                            return AppContiner(
+                            return AppContainer(
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
@@ -177,10 +174,10 @@ class BlogTablet extends StatelessWidget {
                   return const Center(child: Text('No Posts Available'));
                 },
               ),
+              const AppFooter()
             ],
           ),
         );
-      },
-    );
+
   }
 }

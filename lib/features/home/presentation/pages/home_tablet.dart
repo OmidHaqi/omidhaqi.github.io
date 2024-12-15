@@ -11,7 +11,7 @@ class HomeTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: AppContiner(
+        child: AppContainer(
           width: 400.dp(context),
           height: 290.dp(context),
           child: Center(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppContiner extends StatelessWidget {
+class AppContainer extends StatelessWidget {
   final double? width;
   final double? height;
   final EdgeInsetsGeometry? margin;
@@ -9,7 +9,7 @@ class AppContiner extends StatelessWidget {
   final double borderRadius = 30;
   final double borderWidth = 1;
   final void Function()? onTap;
-  const AppContiner({
+  const AppContainer({
     super.key,
     this.width,
     this.height,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/extension.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/desktop_app_bar.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/config/app_constants.dart';
@@ -24,12 +25,16 @@ class BlogDesktop extends StatelessWidget {
           }
 
           return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment:
+                CrossAxisAlignment.start, // Changed from center to start
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.10,
-                  vertical: 30,
+                padding: EdgeInsets.only(
+                  left: size.width * 0.10,
+                  right: size.width * 0.10,
+                  top: size.height * 0.05,
+                  bottom: size.height * 0.05,
                 ),
                 child: Text(
                   'Blogs',
@@ -57,7 +62,7 @@ class BlogDesktop extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final post = state.posts[index];
 
-                            return AppContiner(
+                            return AppContainer(
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
@@ -157,6 +162,7 @@ class BlogDesktop extends StatelessWidget {
                   return const Center(child: Text('No Posts Available'));
                 },
               ),
+              Center(child: const AppFooter()) // Wrapped AppFooter with Center
             ],
           );
         },

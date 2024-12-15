@@ -30,7 +30,7 @@ class TestScreen extends StatelessWidget {
                   Row(
                     spacing: size.width * 0.02,
                     children: [
-                      AppContiner(
+                      AppContainer(
                         width: size.width * 0.29,
                         // height: size.height * 0.3,
                         child: Row(
@@ -111,7 +111,7 @@ class TestScreen extends StatelessWidget {
                       Column(
                         spacing: 20,
                         children: [
-                          AppContiner(
+                          AppContainer(
                             width: size.width * 0.40,
                             padding: EdgeInsets.all(size.width * 0.01),
                             child: const Text(
@@ -123,7 +123,7 @@ class TestScreen extends StatelessWidget {
                             spacing: size.width * 0.01,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppContiner(
+                              AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.13,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -187,7 +187,7 @@ class TestScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AppContiner(
+                              AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.13,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -251,7 +251,7 @@ class TestScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              AppContiner(
+                              AppContainer(
                                 height: size.height * 0.235,
                                 width: size.width * 0.13,
                                 padding: EdgeInsets.all(size.width * 0.001),
@@ -324,7 +324,7 @@ class TestScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AppContiner(
+                      AppContainer(
                         height: size.height * 0.235,
                         width: size.width * 0.13,
                         padding: EdgeInsets.all(size.width * 0.001),
@@ -387,7 +387,7 @@ class TestScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      AppContiner(
+                      AppContainer(
                         height: size.height * 0.235,
                         padding: EdgeInsets.all(size.width * 0.001),
                         child: Column(
@@ -519,7 +519,7 @@ class TestScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      AppContiner(
+                      AppContainer(
                         height: size.height * 0.235,
                         width: size.width * 0.13,
                         padding: EdgeInsets.all(size.width * 0.001),
@@ -579,13 +579,13 @@ class TestScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      AppContiner(
+                      AppContainer(
                         height: size.height * 0.235,
                         padding: EdgeInsets.all(size.width * 0.001),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppContiner(
+                            AppContainer(
                               margin: const EdgeInsets.all(10),
                               child: Row(
                                 children: [
