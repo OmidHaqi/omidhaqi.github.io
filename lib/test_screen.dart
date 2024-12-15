@@ -17,7 +17,7 @@ class TestScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const DesktopAppBar(),
+
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(

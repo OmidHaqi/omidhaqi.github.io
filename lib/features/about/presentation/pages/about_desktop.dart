@@ -8,10 +8,13 @@ class AboutDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
+        final Size size = MediaQuery.of(context).size;
+
+    return  Scaffold(
+      appBar: DesktopAppBar(size: size),
+      body: const Column(
         children: [
-          DesktopAppBar(),
+
           Expanded(
             child: Center(
               child: Text('About Screen'),

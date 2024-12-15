@@ -10,13 +10,14 @@ import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works_screen.dart';
 
-class DesktopAppBar extends StatelessWidget {
-  const DesktopAppBar({super.key});
+class DesktopAppBar extends StatelessWidget  implements PreferredSizeWidget {
+    final Size size;
+  const DesktopAppBar({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -31,6 +32,9 @@ class DesktopAppBar extends StatelessWidget {
       ),
     );
   }
+  
+  @override
+  Size get preferredSize => Size.fromHeight(size.height * 0.25);
 }
 
 class _NavigationButtons extends StatelessWidget {

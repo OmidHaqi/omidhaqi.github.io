@@ -16,6 +16,7 @@ class BlogDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
+      appBar: DesktopAppBar(size: size),
       body: BlocBuilder<BlogBloc, BlogState>(
         builder: (context, state) {
           if (state is BlogLoading) {
@@ -25,7 +26,6 @@ class BlogDesktop extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const DesktopAppBar(),
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: size.width * 0.10,

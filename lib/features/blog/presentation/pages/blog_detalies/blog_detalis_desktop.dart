@@ -15,7 +15,7 @@ class BlogDetalisDesktop extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const DesktopAppBar(),
+
           Expanded(
             child: Center(
               child: HtmlWidget(postDetails.details),

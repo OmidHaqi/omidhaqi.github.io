@@ -11,7 +11,7 @@ class ContactDesktop extends StatelessWidget {
     return const Scaffold(
       body: Column(
         children: [
-          DesktopAppBar(),
+
           Expanded(
             child: Center(
               child: Text('Contact Screen'),
