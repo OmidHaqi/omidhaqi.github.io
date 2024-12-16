@@ -162,7 +162,7 @@ class BlogDesktop extends StatelessWidget {
                   return const Center(child: Text('No Posts Available'));
                 },
               ),
-              Center(child: const AppFooter()) // Wrapped AppFooter with Center
+              const Center(child: AppFooter()) // Wrapped AppFooter with Center
             ],
           );
         },
