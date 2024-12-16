@@ -14,10 +14,18 @@ class ProfileCard extends StatelessWidget {
     required this.profileWidth,
     required this.profileHeight,
     required this.size,
+    this.shortDesWidth,
+    this.nameWidth,
+    this.longDesWidth, 
+    required this.bottomPadding,
   });
 
   final double? width;
   final double? height;
+  final double? shortDesWidth;
+  final double? nameWidth;
+  final double? longDesWidth;
+  final double bottomPadding;
   final Size size;
   final String shortDes;
   final String name;
@@ -33,14 +41,14 @@ class ProfileCard extends StatelessWidget {
       height: height,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
             padding: EdgeInsets.all(size.width * 0.02),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-              profileUrl,
+                profileUrl,
                 fit: BoxFit.cover,
                 height: profileHeight,
                 width: profileWidth,
@@ -49,16 +57,16 @@ class ProfileCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              bottom: size.height * 0.1,
+              bottom: bottomPadding,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 10,
               children: [
                 SizedBox(
-                  width: size.width * 0.1,
+                  width: shortDesWidth,
                   child: Text(
-                   shortDes,
+                    shortDes,
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.5),
                     ),
@@ -67,9 +75,9 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: size.width * 0.1,
-                  child:  Text(
-                   name,
+                  width: nameWidth,
+                  child: Text(
+                    name,
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -79,7 +87,7 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: size.width * 0.1,
+                  width: longDesWidth,
                   child: Text(
                     longDes,
                     style: TextStyle(

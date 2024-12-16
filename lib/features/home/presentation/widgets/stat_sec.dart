@@ -14,6 +14,8 @@ class StatSec extends StatelessWidget {
     required this.subTitle2,
     required this.title3,
     required this.subTitle3,
+    this.statCardWidth,
+    this.statCardHeight,
   });
 
   final Size size;
@@ -25,6 +27,8 @@ class StatSec extends StatelessWidget {
   final String subTitle2;
   final String title3;
   final String subTitle3;
+  final double? statCardWidth;
+  final double? statCardHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -36,22 +40,22 @@ class StatSec extends StatelessWidget {
         children: [
           StatCard(
               size: size,
-              width: size.width * 0.07,
-              height: size.width * 0.09,
+              width: statCardWidth ?? size.width * 0.07,
+              height: statCardHeight ?? size.width * 0.09,
               title: title1, //  '+4',
               subTitle: subTitle1 //'YEARS XP',
               ),
           StatCard(
               size: size,
-              width: size.width * 0.07,
-              height: size.width * 0.09,
+              width: statCardWidth ?? size.width * 0.07,
+              height: statCardHeight ?? size.width * 0.09,
               title: title2, //'+20',
               subTitle: subTitle2 //'TOTAL PROJECTS',
               ),
           StatCard(
               size: size,
-              width: size.width * 0.07,
-              height: size.width * 0.09,
+              width: statCardWidth ?? size.width * 0.07,
+              height: statCardHeight ?? size.width * 0.09,
               title: title3, // '+10',
               subTitle: subTitle3 //'CLIENTS WORLDWIDE',
               ),

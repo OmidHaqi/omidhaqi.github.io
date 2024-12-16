@@ -17,23 +17,21 @@ class PromoSec extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppContainer(
-      width: size.width * 0.32,
-      height: size.height * 0.235,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: size.width * 0.01),
-                child: Image.asset('assets/images/star.png'),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: size.width * 0.01),
-                child: const Column(
+      width: width,
+      height: height,
+      child: Padding(
+        padding: EdgeInsets.only(left: size.width * 0.08
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/star.png'),
+                const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -56,19 +54,19 @@ class PromoSec extends StatelessWidget {
                         ),
                       )
                     ]),
-              ),
-              const SizedBox(height: 10)
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.all(size.width * 0.01),
-            child: SvgPicture.asset(
-              'assets/icons/arrow_to_right.svg',
-              height: size.height * 0.05,
-              width: size.width * 0.05,
+                const SizedBox(height: 10)
+              ],
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.all(size.width * 0.01),
+              child: SvgPicture.asset(
+                'assets/icons/arrow_to_right.svg',
+                height: size.height * 0.05,
+                width: size.width * 0.05,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

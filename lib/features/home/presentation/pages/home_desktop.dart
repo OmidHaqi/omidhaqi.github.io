@@ -32,125 +32,124 @@ class HomeDesktop extends StatelessWidget {
             return const LoadingWidget();
           } else if (state is HomeLoaded) {
             return SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: size.height * 0.01,
-                      left: size.width * 0.17,
-                      right: size.width * 0.17,
-                      bottom: size.height * 0.02,
-                    ),
-                    child: Column(
-                      spacing: size.height * 0.03,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: size.height * 0.01,
+                  left: size.width * 0.17,
+                  right: size.width * 0.17,
+                  bottom: size.height * 0.02,
+                ),
+                child: Column(
+                  spacing: size.height * 0.03,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        ProfileCard(
+                          shortDes: 'A DEVELOPER',
+                          name: ' Omid Haqi',
+                          longDes:
+                              'I AM A DEVELOPER AND SOFTWARE ENGINEER.',
+                          profileUrl:
+                              'assets/images/profile_placeholder.jpg',
+                          size: size,
+                          profileHeight: size.height * 0.23,
+                          profileWidth: size.width * 0.1,
+                          width: size.width * 0.35,
+                          longDesWidth: size.width * 0.1,
+                          nameWidth: size.width * 0.1,
+                          shortDesWidth: size.width * 0.1,
+                          bottomPadding: size.height * 0.1,
+                        ),
+                        Column(
+                          spacing: 20,
                           children: [
-                            ProfileCard(
-                              shortDes: 'A DEVELOPER',
-                              name: ' Omid Haqi',
-                              longDes:
-                                  'I AM A DEVELOPER AND SOFTWARE ENGINEER.',
-                              profileUrl:
-                                  'assets/images/profile_placeholder.jpg',
+                            AnimatedText(
                               size: size,
-                              profileHeight: size.height * 0.23,
-                              profileWidth: size.width * 0.1,
-                              width: size.width * 0.35,
+                              text:
+                                  'LATEST WORK AND FEATURED . LATEST WORK AND FEATURED . ',
+                              width: size.width * 0.28,
                             ),
-                            Column(
-                              spacing: 20,
+                            Row(
+                              spacing: size.width * 0.02,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                AnimatedText(
+                                ItemCard(
                                   size: size,
-                                  text:
-                                      'LATEST WORK AND FEATURED . LATEST WORK AND FEATURED . ',
-                                  width: size.width * 0.28,
+                                  height: size.height * 0.235,
+                                  width: size.width * 0.13,
+                                  imageHeight: size.height * 0.15,
+                                  imageWidth: size.width * 0.1,
+                                  imageUrl: 'assets/images/signature.png',
+                                  title: 'MORE ABOUT ME',
+                                  subTitle: 'Credentials',
                                 ),
-                                Row(
-                                  spacing: size.width * 0.02,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    ItemCard(
-                                      size: size,
-                                      height: size.height * 0.235,
-                                      width: size.width * 0.13,
-                                      imageHeight: size.height * 0.15,
-                                      imageWidth: size.width * 0.1,
-                                      imageUrl: 'assets/images/signature.png',
-                                      title: 'MORE ABOUT ME',
-                                      subTitle: 'Credentials',
-                                    ),
-                                    ItemCard(
-                                      size: size,
-                                      height: size.height * 0.235,
-                                      width: size.width * 0.13,
-                                      imageHeight: size.height * 0.15,
-                                      imageWidth: size.width * 0.1,
-                                      imageUrl: 'assets/images/works.png',
-                                      title: 'SHOWCASE',
-                                      subTitle: 'Projects',
-                                    ),
-                                  ],
-                                )
+                                ItemCard(
+                                  size: size,
+                                  height: size.height * 0.235,
+                                  width: size.width * 0.13,
+                                  imageHeight: size.height * 0.15,
+                                  imageWidth: size.width * 0.1,
+                                  imageUrl: 'assets/images/works.png',
+                                  title: 'SHOWCASE',
+                                  subTitle: 'Projects',
+                                ),
                               ],
                             )
                           ],
-                        ),
-                        Row(
-                          spacing: size.width * 0.01,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ItemCard(
-                              size: size,
-                              height: size.height * 0.235,
-                              width: size.width * 0.13,
-                              imageHeight: size.height * 0.15,
-                              imageWidth: size.width * 0.1,
-                              imageUrl: 'assets/images/gfonts.png',
-                              title: 'BLOG',
-                              subTitle: 'GFonts',
-                            ),
-                            ServiceSec(
-                              size: size,
-                              width: size.width * 0.29,
-                              height: size.height * 0.235,
-                            ),
-                            SocialSec(
-                              size: size,
-                              height: size.height * 0.235,
-                              width: size.width * 0.2,
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            StatSec(
-                              size: size,
-                              width: size.width * 0.32,
-                              height: size.height * 0.235,
-                              title1: '+4',
-                              subTitle1: 'YEARS XP',
-                              title2: '+20',
-                              subTitle2: 'TOTAL PROJECTS',
-                              title3: '+10',
-                              subTitle3: 'CLIENTS WORLDWIDE',
-                            ),
-                            PromoSec(
-                              size: size,
-                              width: size.width * 0.32,
-                              height: size.height * 0.235,
-                            ),
-                          ],
-                        ),
-                        const AppFooter()
+                        )
                       ],
                     ),
-                  ),
-                ],
+                    Row(
+                      spacing: size.width * 0.01,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ItemCard(
+                          size: size,
+                          height: size.height * 0.235,
+                          width: size.width * 0.13,
+                          imageHeight: size.height * 0.15,
+                          imageWidth: size.width * 0.1,
+                          imageUrl: 'assets/images/gfonts.png',
+                          title: 'BLOG',
+                          subTitle: 'GFonts',
+                        ),
+                        ServiceSec(
+                          size: size,
+                          width: size.width * 0.29,
+                          height: size.height * 0.235,
+                        ),
+                        SocialSec(
+                          size: size,
+                          height: size.height * 0.235,
+                          width: size.width * 0.2,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        StatSec(
+                          size: size,
+                          width: size.width * 0.32,
+                          height: size.height * 0.235,
+                          title1: '+4',
+                          subTitle1: 'YEARS XP',
+                          title2: '+20',
+                          subTitle2: 'TOTAL PROJECTS',
+                          title3: '+10',
+                          subTitle3: 'CLIENTS WORLDWIDE',
+                        ),
+                        PromoSec(
+                          size: size,
+                          width: size.width * 0.32,
+                          height: size.height * 0.235,
+                        ),
+                      ],
+                    ),
+                    const AppFooter()
+                  ],
+                ),
               ),
             );
           } else if (state is HomeError) {

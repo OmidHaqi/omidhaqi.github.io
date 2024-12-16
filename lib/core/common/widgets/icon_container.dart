@@ -26,13 +26,15 @@ class IconContainer extends StatelessWidget {
       margin: margin ?? EdgeInsets.all(size.width * 0.01),
       padding: padding ?? EdgeInsets.all(size.width * 0.01),
       decoration: ShapeDecoration(
+
         color: const Color(0xFF2A2A2A),
         shape: RoundedRectangleBorder(
+          
           side: BorderSide(
             width: 1,
             color: Colors.white.withValues(alpha: 0.1),
           ),
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(100),
         ),
       ),
       child: SvgPicture.asset(iconPath),

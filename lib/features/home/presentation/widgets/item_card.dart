@@ -13,6 +13,10 @@ class ItemCard extends StatelessWidget {
     required this.subTitle,
     this.imageHeight,
     this.imageWidth,
+    this.titleHeight,
+    this.titleWidth,
+    this.subTitleHeight,
+    this.subTitleWidth,
   });
 
   final Size size;
@@ -20,6 +24,10 @@ class ItemCard extends StatelessWidget {
   final double? width;
   final double? imageHeight;
   final double? imageWidth;
+  final double? titleHeight;
+  final double? titleWidth;
+  final double? subTitleHeight;
+  final double? subTitleWidth;
   final String imageUrl;
   final String title;
   final String subTitle;
@@ -43,19 +51,19 @@ class ItemCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.0095,
+                  horizontal: size.width * 0.0075,
                   vertical: size.width * 0.001,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: size.width * 0.062,
-                      height: size.height * 0.03,
+                      width: titleWidth ?? size.width * 0.062,
+                      height: titleHeight ?? size.height * 0.03,
                       child: Text(
                         title,
                         maxLines: 1,
@@ -65,8 +73,8 @@ class ItemCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: size.width * 0.062,
-                      height: size.height * 0.03,
+                      width: subTitleWidth ?? size.width * 0.062,
+                      height: subTitleHeight ?? size.height * 0.03,
                       child: Text(
                         subTitle,
                         style: const TextStyle(
