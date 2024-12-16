@@ -15,8 +15,56 @@ class BlogDetalisMobile extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      drawer: const MyDrawer(
-        child: SizedBox.shrink(),
+      drawer:  MyDrawer(
+        ctaText: 'Let\'s Talk',
+        onPressedCTA: () {},
+        children: const [
+          ListTile(
+            title: Text(
+              'Home',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'About',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'Blog',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'Works',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              'Contact',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
       appBar: AppBar(
         toolbarHeight: size.height * 0.1,

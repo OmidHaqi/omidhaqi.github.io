@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ox0/core/common/utils/extension.dart';
-import 'package:ox0/core/common/widgets/app_button.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
 import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
-import 'package:ox0/core/common/widgets/logo.dart';
+import 'package:ox0/core/common/widgets/mobile_app_bar.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
+import 'package:ox0/core/common/widgets/my_drawer_item.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
 
@@ -23,24 +23,33 @@ class BlogMobile extends StatelessWidget {
         }
 
         return Scaffold(
-          drawer: const MyDrawer(
-            child: SizedBox.shrink(),
+          drawer: MyDrawer(
+            ctaText: 'Let\'s Talk',
+            onPressedCTA: () {},
+            children: [
+              MyDrawerItem(
+                title: 'Home',
+                onTap: () {},
+              ),
+              MyDrawerItem(
+                title: 'About',
+                onTap: () {},
+              ),
+              MyDrawerItem(
+                title: 'Works',
+                onTap: () {},
+              ),
+              MyDrawerItem(
+                title: 'Blogs',
+                onTap: () {},
+              ),
+              MyDrawerItem(
+                title: 'Contact',
+                onTap: () {},
+              ),
+            ],
           ),
-          appBar: AppBar(
-            toolbarHeight: size.height * 0.1,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const SizedBox.shrink(),
-                const Logo(),
-                AppButton(
-                  //TODO: Implement onPressed
-                  onPressed: () {},
-                  text: 'Let\'s Talk',
-                ),
-              ],
-            ),
-          ),
+          appBar: MobileAppBar(size: size),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
