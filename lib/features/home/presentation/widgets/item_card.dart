@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
 
 class ItemCard extends StatelessWidget {
@@ -48,15 +49,18 @@ class ItemCard extends StatelessWidget {
             imageUrl,
             height: imageHeight,
             width: imageWidth,
-            fit: BoxFit.cover,
+            
+            fit: Responsive.isMobile(context)? BoxFit.contain : BoxFit.cover ,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.0075,
-                  vertical: size.width * 0.001,
+                  horizontal: Responsive.isMobile(context)? size.width * 0.03 : size.width * 0.0075,
+                  vertical: Responsive.isMobile(context)
+                      ? size.width * 0.02
+                      : size.width * 0.001,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

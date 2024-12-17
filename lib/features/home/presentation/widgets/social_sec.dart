@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
 import 'package:ox0/core/common/widgets/icon_container.dart';
 
@@ -34,10 +35,12 @@ class SocialSec extends StatelessWidget {
       width: width,
       padding: EdgeInsets.all(size.width * 0.001),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const SizedBox(),
           AppContainer(
+            borderRadius: 20,
+            height: size.height * 0.1,
             margin: const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,7 +50,11 @@ class SocialSec extends StatelessWidget {
                   width: iconContainerWidth ?? size.width * 0.04,
                   height: iconContainerHeight ?? size.width * 0.04,
                   margin: EdgeInsets.all(size.width * 0.005),
-                  padding: EdgeInsets.all(size.width * 0.01),
+                  padding: EdgeInsets.all(
+                    Responsive.isMobile(context)
+                        ? size.width * 0.02
+                        : size.width * 0.01,
+                  ),
                   iconPath: 'assets/icons/ic_telegram.svg',
                 ),
                 IconContainer(
@@ -55,7 +62,11 @@ class SocialSec extends StatelessWidget {
                   width: iconContainerWidth ?? size.width * 0.04,
                   height: iconContainerHeight ?? size.width * 0.04,
                   margin: EdgeInsets.all(size.width * 0.005),
-                  padding: EdgeInsets.all(size.width * 0.01),
+                  padding: EdgeInsets.all(
+                    Responsive.isMobile(context)
+                        ? size.width * 0.02
+                        : size.width * 0.01,
+                  ),
                   iconPath: 'assets/icons/ic_github.svg',
                 ),
                 IconContainer(
@@ -63,57 +74,67 @@ class SocialSec extends StatelessWidget {
                   width: iconContainerWidth ?? size.width * 0.04,
                   height: iconContainerHeight ?? size.width * 0.04,
                   margin: EdgeInsets.all(size.width * 0.005),
-                  padding: EdgeInsets.all(size.width * 0.01),
+                  padding: EdgeInsets.all(
+                    Responsive.isMobile(context)
+                        ? size.width * 0.02
+                        : size.width * 0.01,
+                  ),
                   iconPath: 'assets/icons/ic_linkdin.svg',
                 ),
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.0075,
-                  vertical: size.width * 0.001,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: titleWidth ?? size.width * 0.062,
-                      height: titleHeight ?? size.height * 0.03,
-                      child: Text(
-                        'STAY WITH ME',
-                        maxLines: 1,
-                        style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.5),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: size.width * 0.0075,
+              vertical: size.width * 0.003,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: size.width * 0.0075,
+                    vertical: size.width * 0.001,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: titleWidth ?? size.width * 0.09,
+                        height: titleHeight ?? size.height * 0.03,
+                        child: Text(
+                          'STAY WITH ME',
+                          maxLines: 1,
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.5),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: subTitleWidth ?? size.width * 0.062,
-                      height: subTitleHeight ?? size.height * 0.03,
-                      child: const Text(
-                        'Profiles',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: subTitleWidth ?? size.width * 0.062,
+                        height: subTitleHeight ?? size.height * 0.03,
+                        child: const Text(
+                          'Profiles',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: size.width * 0.006),
-                child: SvgPicture.asset(
-                  'assets/icons/arrow_to_right.svg',
-                  height: size.height * 0.05,
-                  width: size.width * 0.05,
+                Padding(
+                  padding: EdgeInsets.only(right: size.width * 0.006),
+                  child: SvgPicture.asset(
+                    'assets/icons/arrow_to_right.svg',
+                    height: size.height * 0.05,
+                    width: size.width * 0.05,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

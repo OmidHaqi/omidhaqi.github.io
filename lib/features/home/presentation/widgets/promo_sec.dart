@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
 
 class PromoSec extends StatelessWidget {
@@ -20,7 +21,7 @@ class PromoSec extends StatelessWidget {
       width: width,
       height: height,
       child: Padding(
-        padding: EdgeInsets.only(left: size.width * 0.08
+        padding: EdgeInsets.only(left: Responsive.isDesktop(context)? size.width * 0.03 : size.width * 0.08
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +59,7 @@ class PromoSec extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(size.width * 0.01),
+              padding: EdgeInsets.all(Responsive.isMobile(context)? size.width * 0.05: size.width * 0.01),
               child: SvgPicture.asset(
                 'assets/icons/arrow_to_right.svg',
                 height: size.height * 0.05,
