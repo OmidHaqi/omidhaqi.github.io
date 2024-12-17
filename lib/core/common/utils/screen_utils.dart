@@ -15,11 +15,11 @@ extension SizeExtension on num {
 
   /// Get the value as width percentage
   double w(BuildContext context) {
-    return (this / 100) * MediaQuery.of(context).size.width;
+    return (this / 100) * MediaQuery.sizeOf(context).width;
   }
 
   /// Get the value as height percentage
   double h(BuildContext context) {
-    return (this / 100) * MediaQuery.of(context).size.height;
+    return (this / 100) * MediaQuery.sizeOf(context).height;
   }
 }
