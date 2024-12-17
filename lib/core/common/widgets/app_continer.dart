@@ -6,8 +6,8 @@ class AppContainer extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
   final Widget child;
-  final double borderRadius = 30;
-  final double borderWidth = 1;
+  final double? borderRadius;
+  final double? borderWidth;
   final void Function()? onTap;
   const AppContainer({
     super.key,
@@ -15,7 +15,10 @@ class AppContainer extends StatelessWidget {
     this.height,
     this.onTap,
     required this.child,
-    this.margin, this.padding,
+    this.margin,
+    this.padding,
+    this.borderRadius,
+    this.borderWidth,
   });
 
   @override
@@ -37,10 +40,10 @@ class AppContainer extends StatelessWidget {
             ],
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(borderRadius ?? 30),
             side: BorderSide(
               color: Colors.white.withValues(alpha: 0.10),
-              width: borderWidth,
+              width: borderWidth ?? 1,
               style: BorderStyle.solid,
             ),
           ),
