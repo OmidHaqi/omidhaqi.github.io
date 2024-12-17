@@ -51,7 +51,7 @@ class BlogMobile extends StatelessWidget {
           ),
           appBar: MobileAppBar(size: size),
           body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
@@ -189,7 +189,7 @@ class BlogMobile extends StatelessWidget {
                   return const Center(child: Text('No Posts Available'));
                 },
               ),
-              const AppFooter()
+              const Center(child: AppFooter())
             ],
           ),
         );
