@@ -21,9 +21,11 @@ class AnimatedText extends StatelessWidget {
       width: width,
       height: height,
       padding: EdgeInsets.all(size.width * 0.01),
-      child: Text(
-        text,
-        maxLines: 1,
+      child: Center(
+        child: Text(
+          text,
+          maxLines: 1,
+        ),
       ),
     );
   }
