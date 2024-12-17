@@ -4,7 +4,6 @@ import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/common/widgets/mobile_app_bar.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
-import 'package:ox0/core/common/widgets/my_drawer_item.dart';
 import 'package:ox0/features/home/presentation/bloc/home_bloc.dart';
 import 'package:ox0/features/home/presentation/widgets/animated_text.dart';
 import 'package:ox0/features/home/presentation/widgets/item_card.dart';
@@ -29,28 +28,6 @@ class HomeTablet extends StatelessWidget {
       drawer: MyDrawer(
         ctaText: 'Let\'s Talk',
         onPressedCTA: () {},
-        children: [
-          MyDrawerItem(
-            title: 'Home',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'About',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Works',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Blogs',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Contact',
-            onTap: () {},
-          ),
-        ],
       ),
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
