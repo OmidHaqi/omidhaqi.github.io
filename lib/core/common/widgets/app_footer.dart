@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ox0/core/common/widgets/logo.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({
@@ -9,20 +10,26 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding:  EdgeInsets.all(8.0),
-      child:  Text.rich(
-        TextSpan(
-          children: [
+      child:  Column(
+        spacing: 10,
+        children: [
+          Logo(),
+          Text.rich(
             TextSpan(
-              text: '© All rights reserved by  ',
+              children: [
+                TextSpan(
+                  text: '© All rights reserved by  ',
+                ),
+                TextSpan(
+                  text: 'Umut',
+                  style: TextStyle(
+                      color: Color(0xff0A58CA),
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            TextSpan(
-              text: 'Umut',
-              style: TextStyle(
-                  color: Color(0xff0A58CA),
-                  fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
