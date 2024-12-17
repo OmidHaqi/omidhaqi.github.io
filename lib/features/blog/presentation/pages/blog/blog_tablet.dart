@@ -6,7 +6,6 @@ import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/core/common/widgets/mobile_app_bar.dart';
 import 'package:ox0/core/common/widgets/my_drawer.dart';
-import 'package:ox0/core/common/widgets/my_drawer_item.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
 
@@ -21,30 +20,8 @@ class BlogTablet extends StatelessWidget {
       drawer: MyDrawer(
         ctaText: 'Let\'s Talk',
         onPressedCTA: () {},
-        children: [
-          MyDrawerItem(
-            title: 'Home',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'About',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Works',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Blogs',
-            onTap: () {},
-          ),
-          MyDrawerItem(
-            title: 'Contact',
-            onTap: () {},
-          ),
-        ],
       ),
-      appBar:MobileAppBar(size: size),
+      appBar: MobileAppBar(size: size),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -180,7 +157,7 @@ class BlogTablet extends StatelessWidget {
               return const Center(child: Text('No Posts Available'));
             },
           ),
-           const Center(child: AppFooter())
+          const Center(child: AppFooter())
         ],
       ),
     );
