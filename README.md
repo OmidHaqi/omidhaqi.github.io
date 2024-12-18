@@ -14,7 +14,11 @@ A modern, responsive personal portfolio website built with Flutter Web. Features
   - Blog post viewer with HTML support
 - **Dark Theme**: Sleek dark mode interface
 - **Dynamic Content**: Content managed through PocketBase backend
-- **Multi-page Navigation**: Home, About, Works, Blog, and Contact pages
+- **Multi-page Navigation**: Home, About, Works, Blog, and Contact pages with clean URL paths
+
+## Screenshot
+
+![Portfolio Screenshot](assets/images/screenshot.png)
 
 ## Tech Stack
 
@@ -32,7 +36,6 @@ A modern, responsive personal portfolio website built with Flutter Web. Features
 
 - Flutter SDK 3.27.0 or higher
 - Dart SDK ^3.5.3
-- Git
 
 ### Installation
 
@@ -60,18 +63,36 @@ flutter config --enable-web
 flutter build web --release
 ```
 
-## Project Structure
 
+## Route Management
+
+The application uses custom route management for web navigation with clean URLs using `urlPathStrategy`.
+
+### Enabling URL Path Strategy
+
+In `main.dart`, the `usePathUrlStrategy()` function is called to enable clean URLs without hash fragments:
+
+```dart
+void main() {
+  // ...existing code...
+
+  usePathUrlStrategy();
+
+  runApp(MyApp());
+}
 ```
-lib/
-├── core/            # Core utilities and shared components
-├── features/        # Feature modules (home, blog, about, etc.)
-│   ├── home/
-│   ├── blog/
-│   ├── about/
-│   └── contact/
-└── main.dart        # Entry point
+
+### Custom Routes
+
+Routes are defined in `lib/routes.dart` using `onGenerateRoute`:
+
+```dart
+Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
+  // ...existing code...
+}
 ```
+
+This setup allows for dynamic route handling and smooth page transitions across the web app.
 
 ## Deployment
 
