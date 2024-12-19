@@ -25,9 +25,12 @@ class Summery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: size.height * 0.03,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/star_2.png'),
             Text(
@@ -60,7 +63,7 @@ class Summery extends StatelessWidget {
                     const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                width: size.width * 0.4,
+                width:Responsive.isDesktop(context)? size.width * 0.4: size.width * 0.7,
                 height: size.height * 0.15,
                 child: Padding(
                   padding:
