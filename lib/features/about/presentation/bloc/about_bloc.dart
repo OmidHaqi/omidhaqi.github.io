@@ -10,10 +10,10 @@ class AboutBloc extends Bloc<AboutEvent, AboutState> {
   final AboutApiProvider apiProvider;
 
   AboutBloc(this.apiProvider) : super(AboutInitial()) {
-    on<FetchAboutItem>(onFetchHomeItem);
+    on<FetchAboutItem>(onFetchAboutItem);
   }
 
-  Future<void> onFetchHomeItem(
+  Future<void> onFetchAboutItem(
     FetchAboutItem event,
     Emitter<AboutState> emit,
   ) async {
