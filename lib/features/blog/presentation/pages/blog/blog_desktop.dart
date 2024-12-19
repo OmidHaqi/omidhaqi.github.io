@@ -5,8 +5,10 @@ import 'package:ox0/core/common/widgets/app_continer.dart';
 import 'package:ox0/core/common/widgets/app_footer.dart';
 import 'package:ox0/core/common/widgets/desktop_app_bar.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
+import 'package:ox0/core/common/widgets/title_text.dart';
 import 'package:ox0/core/config/app_constants.dart';
 import 'package:ox0/features/blog/presentation/bloc/blog_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class BlogDesktop extends StatelessWidget {
   const BlogDesktop({
@@ -25,22 +27,9 @@ class BlogDesktop extends StatelessWidget {
           }
 
           return Column(
-            crossAxisAlignment:
-                CrossAxisAlignment.start, // Changed from center to start
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  left: size.width * 0.10,
-                  right: size.width * 0.10,
-                  top: size.height * 0.05,
-                  bottom: size.height * 0.05,
-                ),
-                child: Text(
-                  'Blogs',
-                  style: Theme.of(context).textTheme.displayMedium,
-                ),
-              ),
               BlocBuilder<BlogBloc, BlogState>(
                 builder: (context, state) {
                   if (state is BlogLoaded) {
@@ -48,20 +37,31 @@ class BlogDesktop extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: size.width * 0.10,
+                          vertical: size.height * 0.02,
                         ),
-                        child: GridView.builder(
-                          itemCount: state.posts.length,
+                        child: MasonryGridView.builder(
+                          itemCount:
+                              state.posts.length + 1, // Added 1 for the title
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4, // Adjusted crossAxisCount
-                            crossAxisSpacing: 10, // Adjusted spacing
-                            mainAxisSpacing: 10,
-                            mainAxisExtent: 450,
-                            // Adjusted spacing
+                              const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
                           ),
+                          mainAxisSpacing: 16,
+                          crossAxisSpacing: 16,
                           itemBuilder: (context, index) {
-                            final post = state.posts[index];
-
+                            if (index == 0) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: size.height * 0.02,
+                                ),
+                                child: TitleText(
+                                  title: 'Blogs',
+                                  size: size,
+                                  titleFontSize: 46,
+                                ),
+                              );
+                            }
+                            final post = state.posts[index - 1];
                             return AppContainer(
                               onTap: () {
                                 Navigator.pushNamed(
@@ -70,80 +70,57 @@ class BlogDesktop extends StatelessWidget {
                                 );
                               },
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(16),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: Image.network(
-                                        '${AppConstants.baseUrl}/api/files/${post.collectionName}/${post.id}/${post.image}',
-                                        fit: BoxFit.cover,
-                                        width: size.width * 0.25,
-                                        height: size.height * 0.25,
-                                      ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.network(
+                                      '${AppConstants.baseUrl}/api/files/${post.collectionName}/${post.id}/${post.image}',
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
-                                  Expanded(
+                                  Padding(
+                                    padding: const EdgeInsets.all(16),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        ListTile(
-                                          title: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                              post.title,
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 1,
-                                              style: const TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                          subtitle: Text(
-                                            post.description,
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 3,
+                                        Text(
+                                          post.title,
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 15.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: Text(post.author),
-                                                  ),
-                                                  const Icon(Icons.edit),
-                                                ],
-                                              ),
-                                              const SizedBox(width: 20),
-                                              Row(
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: Text(post.created
-                                                        .formatted()),
-                                                  ),
-                                                  const Icon(
-                                                      Icons.calendar_today),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        )
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          post.description,
+                                          maxLines: 3,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(height: 16),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.edit,
+                                                    size: 16),
+                                                const SizedBox(width: 4),
+                                                Text(post.author),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.calendar_today,
+                                                    size: 16),
+                                                const SizedBox(width: 4),
+                                                Text(post.created.formatted()),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
