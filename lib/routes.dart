@@ -8,7 +8,7 @@ import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
 import 'package:ox0/features/works/presentation/pages/works/works_screen.dart';
 import 'package:ox0/features/404/presentation/page_not_found.dart';
-import 'package:ox0/features/works/presentation/pages/works_detalies/works_detailes_screen.dart';
+import 'package:ox0/features/works/presentation/pages/works_detailes/works_detailes_screen.dart';
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
   final cubit = context.read<DesktopNavBarRouteCubit>();

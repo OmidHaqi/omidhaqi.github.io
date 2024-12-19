@@ -4,9 +4,9 @@ import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/loading_widget.dart';
 import 'package:ox0/features/works/data/datasources/works_api_provider.dart';
 import 'package:ox0/features/works/presentation/bloc/works_bloc.dart';
-import 'package:ox0/features/works/presentation/pages/works_detalies/works_detailes_desktop.dart';
-import 'package:ox0/features/works/presentation/pages/works_detalies/works_detailes_mobile.dart';
-import 'package:ox0/features/works/presentation/pages/works_detalies/works_detailes_tablet.dart';
+import 'package:ox0/features/works/presentation/pages/works_detailes/works_detailes_desktop.dart';
+import 'package:ox0/features/works/presentation/pages/works_detailes/works_detailes_mobile.dart';
+import 'package:ox0/features/works/presentation/pages/works_detailes/works_detailes_tablet.dart';
 
 class WorksDetailesScreen extends StatelessWidget {
   const WorksDetailesScreen({super.key, required this.slug});
