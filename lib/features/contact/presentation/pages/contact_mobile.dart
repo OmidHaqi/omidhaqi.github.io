@@ -16,9 +16,9 @@ class ContactMobile extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: MobileAppBar(size: size),
-      drawer: MyDrawer(
+      drawer: const MyDrawer(
         ctaText: 'Let\'s Talk',
-        onPressedCTA: () {},
+         
       ),
       body: SingleChildScrollView(
         child: Column(

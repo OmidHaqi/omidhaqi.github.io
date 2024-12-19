@@ -20,9 +20,9 @@ class AboutMobile extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: MobileAppBar(size: size),
-      drawer: MyDrawer(
+      drawer: const MyDrawer(
         ctaText: 'Let\'s Talk',
-        onPressedCTA: () {},
+         
       ),
       body: BlocBuilder<AboutBloc, AboutState>(
         builder: (context, state) {

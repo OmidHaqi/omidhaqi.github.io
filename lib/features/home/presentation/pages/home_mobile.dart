@@ -26,9 +26,9 @@ class HomeMobile extends StatelessWidget {
       appBar: MobileAppBar(
         size: size,
       ),
-      drawer: MyDrawer(
+      drawer: const MyDrawer(
         ctaText: 'Let\'s Talk',
-        onPressedCTA: () {},
+         
         
       ),
       body: BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {

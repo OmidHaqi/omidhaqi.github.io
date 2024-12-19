@@ -22,9 +22,9 @@ class BlogMobile extends StatelessWidget {
         }
 
         return Scaffold(
-          drawer: MyDrawer(
+          drawer: const MyDrawer(
             ctaText: 'Let\'s Talk',
-            onPressedCTA: () {},
+             
           ),
           appBar: MobileAppBar(size: size),
           body: Column(

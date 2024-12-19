@@ -14,9 +14,9 @@ class BlogDetalisMobile extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      drawer: MyDrawer(
+      drawer: const MyDrawer(
         ctaText: 'Let\'s Talk',
-        onPressedCTA: () {},
+         
       ),
       appBar: MobileAppBar(
         size: size,

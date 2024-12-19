@@ -6,9 +6,9 @@ import 'package:ox0/features/blog/presentation/pages/blog/blog_screen.dart';
 import 'package:ox0/features/blog/presentation/pages/blog_detalies/blog_detalis_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
-import 'package:ox0/features/works/presentation/pages/works_screen.dart';
+import 'package:ox0/features/works/presentation/pages/works/works_screen.dart';
 import 'package:ox0/features/404/presentation/page_not_found.dart';
-import 'package:ox0/test_screen.dart';
+import 'package:ox0/features/works/presentation/pages/works_detalies/works_detailes_screen.dart';
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
   final cubit = context.read<DesktopNavBarRouteCubit>();
@@ -35,15 +35,13 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
       page = const BlogScreen();
       break;
 
-    case TestScreen.routeName:
-      page = const TestScreen();
-      break;
-
     default:
-      // Dynamic blog post route handling
       if (settings.name?.startsWith('/blogs/') == true) {
         final slug = settings.name!.split('/').last;
         page = BlogDetailsScreen(slug: slug);
+      } else if (settings.name?.startsWith('/works/') == true) {
+        final slug = settings.name!.split('/').last;
+        page = WorksDetailesScreen(slug: slug);
       } else {
         cubit.updateRoute('');
         page = const PageNotFound();

@@ -14,24 +14,31 @@ class BlogDetalisTablet extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      drawer: MyDrawer(
+      drawer: const MyDrawer(
         ctaText: 'Let\'s Talk',
-        onPressedCTA: () {},
       ),
       appBar: MobileAppBar(
         size: size,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.05,
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width * 0.05,
+                    ),
+                    child: HtmlWidget(postDetails.details),
+                  ),
+                ],
+              ),
+            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [HtmlWidget(postDetails.details), const AppFooter()],
-          ),
-        ),
+          const AppFooter()
+        ],
       ),
     );
   }

@@ -6,15 +6,13 @@ import 'package:ox0/features/about/presentation/pages/about_screen.dart';
 import 'package:ox0/features/blog/presentation/pages/blog/blog_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
-import 'package:ox0/features/works/presentation/pages/works_screen.dart';
+import 'package:ox0/features/works/presentation/pages/works/works_screen.dart';
 import 'app_button.dart'; // Add this import
 
 class MyDrawer extends StatelessWidget {
-  final VoidCallback? onPressedCTA;
   final String ctaText;
   const MyDrawer({
     super.key,
-    this.onPressedCTA,
     required this.ctaText,
   });
 
@@ -71,7 +69,9 @@ class MyDrawer extends StatelessWidget {
                 height: 20,
               ),
               AppButton(
-                onPressed: onPressedCTA,
+                onPressed: () {
+                  Navigator.pushNamed(context, ContactScreen.routeName);
+                },
                 text: ctaText,
               ),
               const Text('Made with ☕ by Umut'),

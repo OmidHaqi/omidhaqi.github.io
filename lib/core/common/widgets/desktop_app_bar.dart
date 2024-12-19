@@ -8,7 +8,7 @@ import 'package:ox0/features/about/presentation/pages/about_screen.dart';
 import 'package:ox0/features/blog/presentation/pages/blog/blog_screen.dart';
 import 'package:ox0/features/contact/presentation/pages/contact_screen.dart';
 import 'package:ox0/features/home/presentation/pages/home_screen.dart';
-import 'package:ox0/features/works/presentation/pages/works_screen.dart';
+import 'package:ox0/features/works/presentation/pages/works/works_screen.dart';
 
 class DesktopAppBar extends StatelessWidget  implements PreferredSizeWidget {
     final Size size;
@@ -25,7 +25,9 @@ class DesktopAppBar extends StatelessWidget  implements PreferredSizeWidget {
           const _NavigationButtons(),
           AppButton(
             //TODO: Implement onPressed
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, ContactScreen.routeName);
+            },
             text: 'Let\'s Talk',
           ),
         ],
