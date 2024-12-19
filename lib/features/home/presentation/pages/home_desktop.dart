@@ -47,7 +47,7 @@ class HomeDesktop extends StatelessWidget {
                       children: [
                         ProfileCard(
                           shortDes: 'A DEVELOPER',
-                          name: ' Omid Haqi',
+                          name: '${state.homeItems[0].firstName} ${state.homeItems[0].lastName}',
                           longDes:
                               'I AM A DEVELOPER AND SOFTWARE ENGINEER.',
                           profileUrl:
