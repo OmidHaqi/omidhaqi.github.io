@@ -64,6 +64,8 @@ class AppTheme {
       displayMedium: displayMedium,
       titleLarge: titleLarge,
       bodyLarge: bodyLarge,
+    ).apply(
+      fontFamilyFallback: ['Vazirmatn'],
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -74,7 +76,7 @@ class AppTheme {
           vertical: 12,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
     ),
