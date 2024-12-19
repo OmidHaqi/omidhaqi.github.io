@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/title_text.dart';
 
 class Summery extends StatelessWidget {
   const Summery({
@@ -29,20 +30,7 @@ class Summery extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/star_2.png'),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: titleFontSize ?? size.width * 0.04,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Image.asset('assets/images/star_2.png'),
-          ],
-        ),
+        TitleText(title: title, titleFontSize: titleFontSize, size: size),
         AppContainer(
           width: containerWidth,
           height: containerHeight,

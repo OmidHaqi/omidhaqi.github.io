@@ -9,9 +9,9 @@ class AppFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:  EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(4),
       child:  Column(
-        spacing: 10,
+        spacing: 5,
         children: [
           Logo(),
           Text.rich(
