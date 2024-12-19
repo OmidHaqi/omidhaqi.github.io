@@ -182,6 +182,7 @@ class ContactDesktop extends StatelessWidget {
                                    AppInput(
                                     controller: emailController,
                                     label: 'Email',
+                                    keyboardType: TextInputType.emailAddress,
                                     isRequired: true,
                                   ),
                                    AppInput(
