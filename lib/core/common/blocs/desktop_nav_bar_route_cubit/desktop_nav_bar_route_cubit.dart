@@ -39,9 +39,17 @@ class DesktopNavBarRouteCubit extends Cubit<Map<String, String>> {
 
   // تنظیم مقدار اولیه
   void initializeRoute(String initialRoute) {
-    emit({
-      ...state,
-      'currentRoute': validRoutes.contains(initialRoute) ? initialRoute : '',
-    });
+    // Check if the route is a detail page
+    if (initialRoute.startsWith('/blogs/') || initialRoute.startsWith('/works/')) {
+      emit({
+        ...state,
+        'currentRoute': '',
+      });
+    } else {
+      emit({
+        ...state,
+        'currentRoute': validRoutes.contains(initialRoute) ? initialRoute : '',
+      });
+    }
   }
 }

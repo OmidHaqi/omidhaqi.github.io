@@ -38,9 +38,11 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings, BuildContext context) {
     default:
       if (settings.name?.startsWith('/blogs/') == true) {
         final slug = settings.name!.split('/').last;
+        cubit.updateRoute(''); // Add this line
         page = BlogDetailsScreen(slug: slug);
       } else if (settings.name?.startsWith('/works/') == true) {
         final slug = settings.name!.split('/').last;
+        cubit.updateRoute(''); // Add this line
         page = WorksDetailesScreen(slug: slug);
       } else {
         cubit.updateRoute('');
