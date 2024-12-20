@@ -56,6 +56,7 @@ class ContactDesktop extends StatelessWidget {
         return Scaffold(
           appBar: DesktopAppBar(size: size),
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (state is ContactLoading)
                 const LinearProgressIndicator(
@@ -235,12 +236,13 @@ class ContactDesktop extends StatelessWidget {
                             )
                           ],
                         ),
-                        const AppFooter()
+                        
                       ],
                     ),
                   ),
                 ),
               ),
+              const AppFooter()
             ],
           ),
         );
