@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ox0/core/common/utils/responsive.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/arrow_b_t_n.dart';
 
 class PromoSec extends StatelessWidget {
   const PromoSec({
@@ -60,11 +60,7 @@ class PromoSec extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(Responsive.isMobile(context)? size.width * 0.05: size.width * 0.01),
-              child: SvgPicture.asset(
-                'assets/icons/arrow_to_right.svg',
-                height: size.height * 0.05,
-                width: size.width * 0.05,
-              ),
+              child: ArrowBTN(size: size, id: 'promo'),
             ),
           ],
         ),

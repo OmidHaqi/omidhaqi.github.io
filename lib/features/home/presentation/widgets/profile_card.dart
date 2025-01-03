@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ox0/core/common/widgets/app_continer.dart';
+import 'package:ox0/core/common/widgets/arrow_b_t_n.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({
@@ -100,17 +100,7 @@ class ProfileCard extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              right: size.width * 0.015,
-              bottom: size.width * 0.02,
-            ),
-            child: SvgPicture.asset(
-              'assets/icons/arrow_to_right.svg',
-              height: size.height * 0.05,
-              width: size.width * 0.05,
-            ),
-          ),
+         ArrowBTN(size: size, id: name),
         ],
       ),
     );
