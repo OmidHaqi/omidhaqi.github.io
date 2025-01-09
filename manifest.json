@@ -1,6 +1,6 @@
 {
-  "name": "ox0",
-  "short_name": "ox0",
+  "name": "afhmetal",
+  "short_name": "afhmetal",
   "start_url": ".",
   "scope": "/",
   "display_override": ["fullscreen", "minimal-ui", "window-controls-overlay"],
