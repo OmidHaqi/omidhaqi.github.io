@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "0b9fae716bc3061617e584e9bf2e7777",
+const RESOURCES = {"flutter_bootstrap.js": "464afac7d4d071fadd0283998c11afbc",
 "_redirects": "6a02faf7ea2a9584134ffe15779a0e44",
 "nginx.conf": "9a4ee9891d251581ecbbbc2272774daa",
 "icons/ms-icon-310x310.png": "afebc91dbc934c0e6d1ce502c86b3b15",
@@ -30,7 +30,7 @@ const RESOURCES = {"flutter_bootstrap.js": "0b9fae716bc3061617e584e9bf2e7777",
 "icons/apple-icon-76x76.png": "72dcd2e738724950399109a482bc3314",
 "icons/android-icon-36x36.png": "a4457fa5e7a3c7f616230e5a23e0e95b",
 "icons/apple-icon.png": "abbd6e40210b31de28e6cc07862c96a2",
-"main.dart.js": "27938ea8f1f628061a674d0ee78895d8",
+"main.dart.js": "2ae4c55ce1cb24a47e593e8c03199169",
 "assets/NOTICES": "7a7eec7b3f52ae2d82b53fbe0170ffdb",
 "assets/AssetManifest.json": "1f6103b18ce01569991a9d73bf0fb482",
 "assets/assets/images/gfonts.png": "fd104fd6f7dd335b72f931fae7407f65",
